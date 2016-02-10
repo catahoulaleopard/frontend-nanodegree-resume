@@ -17,9 +17,9 @@ var HTMLheaderRole = '<span>%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><a href="mailto:%data%" target="_blank" class="white-text">%data%</a></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><a href="https://twitter.com/%data%" target="_blank" class="white-text">%data%</a></li>';
+var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="https://github.com/%data%" target="_blank" class="white-text">%data%</a></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
@@ -133,7 +133,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide: 
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
-      locations.push(school.location);
+      locations.push(school.city);
     });
 
     // iterates through work locations and appends each location to
@@ -143,7 +143,11 @@ function initializeMap() {
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
-
+    var counter = 0;
+    locations.forEach(function(loc) {
+      if(loc == undefined) { locations.splice(counter, 1)}
+        counter++;
+    })
     return locations;
   }
 
@@ -211,6 +215,7 @@ function initializeMap() {
     // Iterates through the array of locations, creates a search object for each location
       locations.forEach(function(place){
       // the search request object
+      console.log("place: "+place)
       var request = {
         query: place
       };
@@ -238,11 +243,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+map.fitBounds(mapBounds);
+});

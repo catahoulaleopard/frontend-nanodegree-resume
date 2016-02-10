@@ -24,6 +24,12 @@ h6 {
   padding: 0 5%;
 }
 
+.project-entry img {
+  width: 210px;
+  box-shadow: 1px 1px 6px #333;
+  margin: 5px 15px;
+}
+
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -139,6 +145,13 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+}
+#skills.flex-box {
+    display: inline-block;
+}
+
+.flex-item a {
+      display: inline;
 }
 
 .center-content {
