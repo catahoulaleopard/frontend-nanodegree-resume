@@ -18,6 +18,10 @@ h6 {
   overflow: auto;
 }
 
+.width-maxer {
+  margin: auto;
+  max-width: 1100px;
+}
 .education-entry,
 .work-entry,
 .project-entry {
@@ -136,6 +140,7 @@ a {
 /* TODO: Replace with image later */
 #header {
   background-color: #484848;
+      padding: 2.5% calc((100% - 1100px)/2) 2.5%  calc((100% - 1045px)/2);
 }
 
 .flex-box {
