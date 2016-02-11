@@ -9,9 +9,11 @@
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
-  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <link rel=" stylesheet" type="text/css" href="css/joyride-2.1.css">
 
-  <!-- More on helper.js in the class -->
+  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="js/jquery.joyride-2.1.js"></script>
+
   <script src="js/helper.js"></script>
 
   <!--
@@ -50,6 +52,16 @@
     </div>
   </div>
 
+  <ol id="resume-tour">
+    <li data-id="skills">Welcome to my resume!!!</li>
+    <li data-id="topContacts">Here, you'll find my general contact information.</li>
+    <li data-id="workExperience">And here are some places I've worked. (Although currently, I work for myself as a freelance website builder. (Give me a call to get an awesome site!!!)</li>
+    <li data-id="projects">Now, some projects I've worked on, so you can get an idea of the level of quality you can expect if you hire me.</li>
+    <li data-id="education">My formal education. (It's not much related to what I'm now doing, but it does indicate that I can read and write.)</li>
+    <li data-id="mapDiv">Just for fun, a map of places I've lived and worked. (I'm currently in Atlanta!)</li>
+    <li data-id="lets-connect">That's it! Feel free to look around! Hope to hear from you soon!<br>Let's make something awesome!!!</li>
+  </ol>
+
   <script src="js/resumeBuilder.js"></script>
 
   <script type="text/javascript">
@@ -76,6 +88,16 @@
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
+
+
+    // JOYRIDE SCRIPT ************************
+    $(window).load(function() {
+  $("#resume-tour").joyride({
+        'tipLocation': 'top',
+        'cookieMonster': false,
+        'scrollSpeed': 300
+      });
+    });
   </script>
 </body>
 </html>

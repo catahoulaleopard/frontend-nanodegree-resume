@@ -131,8 +131,6 @@ var projects =  {
 }
 
 
-
-
 //         BEGIN DISPLAY FUNCTIONS ******************************************
 //         WORK EXPERIENCE ***********************
 work.display = function() {
@@ -312,6 +310,18 @@ $("#skills").append(formattedSkillsList);
 work.display();
 projects.display();
 education.display();
+
 //         MAP ***********************
 $("#mapDiv").append(googleMap); 
 
+
+
+
+    // JOYRIDE SCRIPT ************************
+    $(window).load(function() {
+  $("#resume-tour").joyride({
+        'tipLocation': 'top',
+        'cookieMonster': false,
+        'scrollSpeed': 300
+      });
+    });
