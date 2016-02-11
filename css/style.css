@@ -32,6 +32,15 @@ h6 {
   width: 210px;
   box-shadow: 1px 1px 6px #333;
   margin: 5px 15px;
+  -webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
+    transition: width 0.4s, height 0.4s, transform 0.4s;
+}
+.project-entry img:hover {
+  width: 300px;
+}
+
+.project-image {
+ display: inline-block;
 }
 
 h1 {
@@ -139,7 +148,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: rgb(44, 78, 139); /* #484848; */
       padding: 2.5% calc((100% - 1100px)/2) 2.5%  calc((100% - 1045px)/2);
 }
 

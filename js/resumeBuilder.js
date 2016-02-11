@@ -1,8 +1,5 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 
-
+//         THE JSON DATA ******************************************
 var bio =  {
 	"name": "Kyle Booth",
 	"role": "Front-End Web Developer",
