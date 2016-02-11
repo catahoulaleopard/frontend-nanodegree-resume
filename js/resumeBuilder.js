@@ -15,7 +15,7 @@ var bio =  {
 		}],
 	"welcomeMessage": "Hi, Welcome!",
 	"skills": ["HTML", "CSS", "JavaScript", "Web Design", "Writing"],
-	"biopic": "https://lh6.googleusercontent.com/-FP3J4CQJ3Cg/AAAAAAAAAAI/AAAAAAAAAAA/pLbpZU_Ed60/s96-c-mo/photo.jpg",
+	"biopic": "images/kylebooth-2016-02.jpg",
 	"display": function(){}
   }
 
@@ -48,7 +48,7 @@ var education =  {
 			"school": "Udacity",
 			"date": "2016",
 			"url": "https://www.udacity.com/courses/ud804"
-		}
+		},
 		{
 			"title": "30 Days to Learn jQuery",
 			"school": "Envato Tuts+",
@@ -82,40 +82,53 @@ var work =  {
 var projects =  {
 	"projects": [
 		{
-			"title": "theatreinthesquare",
+			"title": "Website: Theatre in the Square",
 			"dates": "2016",
-			"description": "Designed and built the theatre's new website.",
+			"description": "Designed and built the website for Marietta\'s new Theatre in the Square.",
 			"images": [
 					"images/theatreinthesquare_thumbnail01.jpg",
 					"images/theatreinthesquare_thumbnail02.jpg"
-				]
+				],
+			"url": "http://www.theatreinthesquare.net/"
 		}, 
 		{
-			"title": "thenakedcrepe",
+			"title": "Website: thenakedcrepe",
 			"dates": "2016",
 			"description": "Designed and built this cool small business's new website.",
 			"images": [
 					"images/thenakedcrepe_thumbnail01.jpg",
 					"images/thenakedcrepe_thumbnail02.jpg"
-				]
+				],
+			"url": "http://www.thenakedcrepe.com/"
 		}, 
 		{
-			"title": "darkhorsewoodworks",
+			"title": "Website: darkhorsewoodworks",
 			"dates": "2014-2015",
 			"description": "Designed and built the company's new website.",
 			"images": [
 					"images/darkhorsewoodworks_thumbnail01.jpg",
 					"images/darkhorsewoodworks_thumbnail02.jpg"
-				]
+				],
+			"url": "http://darkhorsewoodworks.com/"
 		}, 
 		{
-			"title": "dimensionworks",
+			"title": "Website: dimensionworks",
 			"dates": "2015",
 			"description": "Designed and built the company's new website.",
 			"images": [
 					"images/dimensionworks_thumbnail01.jpg"
-				]
+				],
+			"url": "http://www.dimensionworks.com/"
 		}, 
+		{
+			"title": "Sections of website: whitman.com",
+			"dates": "2015",
+			"description": "Worked with a small team of designers and coders on a complete redesign of whitman.com. Specifically, I worked on the UX of the overall site, including an interactive map and timeline.",
+			"images": [
+					"images/whitman_thumbnail01.jpg"
+				],
+			"url": "https://www.whitman.com/store/Inventory/Browse/National-Park-Quarters-Products"
+		}
 	],
 	"display": function(){}
 }
@@ -174,12 +187,14 @@ projects.display = function() {
 
 				formattedProjectsTitle[i] = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
 				formattedProjectsDates[i] = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
-				formattedProjectsDescription[i] = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+				formattedProjectsDescription[i] = HTMLprojectDescription.replace("%data%", projects.projects[i].description)
+													.replace("%data-url%", projects.projects[i].url);;
 				formattedProjectsImages[i] = "";
 				function projectImagesList() {
 					if ( projects.projects[i].images.length > 0 ) {
 						for ( var j=0; j < projects.projects[i].images.length; j++ ) {
-								formattedProjectsImages[i] += HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
+								formattedProjectsImages[i] += HTMLprojectImage.replace("%data%", projects.projects[i].images[j])
+																.replace("%data-url%", projects.projects[i].url);
 							}
 						return formattedProjectsImages[i];
 					} else return "****";
