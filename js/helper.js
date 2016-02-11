@@ -106,7 +106,8 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true,
+    scrollwheel: false
   };
 
   /* 
