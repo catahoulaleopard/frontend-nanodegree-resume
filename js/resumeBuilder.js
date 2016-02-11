@@ -38,16 +38,22 @@ var education =  {
 	],
 	"onlineCourses": [
 		{
-			"title": "JavaScript Basics",
+			"title": "Version Control: How to Use Git and GitHub",
 			"school": "Udacity",
 			"date": "2016",
-			"url": "https://www.udacity.com/courses/ud804"
+			"url": "https://www.udacity.com/courses/ud775"
 		},
 		{
 			"title": "JavaScript Basics",
 			"school": "Udacity",
 			"date": "2016",
 			"url": "https://www.udacity.com/courses/ud804"
+		}
+		{
+			"title": "30 Days to Learn jQuery",
+			"school": "Envato Tuts+",
+			"date": "2015",
+			"url": "http://code.tutsplus.com/courses/30-days-to-learn-jquery"
 		}
 	],
 	"display": function(){}
@@ -60,7 +66,7 @@ var work =  {
 			"title": "Contract Web Designer",
 			"location": "Atlanta",
 			"dates": "2006-2013",
-			"description": "Worked with a team of designers and coders to build websites for a number of the companies subsidiary companies."
+			"description": "Worked with a team of designers and coders to build websites for a number of the subsidiary companies of the parent company."
 		}, 
 		{
 			"employer": "Standard-Examiner",
