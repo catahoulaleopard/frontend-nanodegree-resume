@@ -35,7 +35,7 @@ var education =  {
 	],
 	"onlineCourses": [
 		{
-			"title": "Version Control: How to Use Git and GitHub",
+			"title": " Version Control with Git and GitHub",
 			"school": "Udacity",
 			"date": "2016",
 			"url": "https://www.udacity.com/courses/ud775"
@@ -161,53 +161,60 @@ var formattedWorkList = function() {
 	} else return "****";
 }
 $(".work-entry").append(formattedWorkList);
-}
+};
 
 
 
 //         PROJECTS ***********************
-projects.display = function() {
-	$("#projects").append(HTMLprojectStart);
-
-	var formattedProjectsTitle = [],
+ var formattedProjectsTitle = [],
 		formattedProjectsDates = [],
 		formattedProjectsDescription = [],
 		formattedProjectsImages = [],
 		formattedProjectsProject = [],
 		formattedProjects = "";
-
-	var formattedProjectsList = function() {
-		if ( projects.projects.length > 0 ) {
-			for ( var i=0; i < projects.projects.length; i++ ) {
-
-				formattedProjectsTitle[i] = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
-				formattedProjectsDates[i] = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
-				formattedProjectsDescription[i] = HTMLprojectDescription.replace("%data%", projects.projects[i].description)
-													.replace("%data-url%", projects.projects[i].url);;
-				formattedProjectsImages[i] = "";
-				function projectImagesList() {
-					if ( projects.projects[i].images.length > 0 ) {
-						for ( var j=0; j < projects.projects[i].images.length; j++ ) {
-								formattedProjectsImages[i] += HTMLprojectImage.replace("%data%", projects.projects[i].images[j])
-																.replace("%data-url%", projects.projects[i].url);
-							}
-						return formattedProjectsImages[i];
-					} else return "****";
+		 function projectImagesList(projNum) {
+  	
+	if ( projects.projects[projNum].images.length > 0 ) {
+		for ( var j=0; j < projects.projects[projNum].images.length; j++ ) {
+			console.log("projNum: "+projNum + ", image: " +projects.projects[projNum].images[j]);
+				formattedProjectsImages[projNum] += HTMLprojectImage.replace("%data%", projects.projects[projNum].images[j])
+												.replace("%data-url%", projects.projects[projNum].url);
 				}
-				formattedProjectsProject[i] = formattedProjectsTitle[i] + formattedProjectsDates[i] + 
-								formattedProjectsDescription[i] + projectImagesList();
-				formattedProjects += formattedProjectsProject[i];
-			}
-			return formattedProjects;
+			return formattedProjectsImages[projNum];
 		} else return "****";
 	}
+
+var formattedProjectsList = function() {
+	if ( projects.projects.length > 0 ) {
+		for ( var i=0; i < projects.projects.length; i++ ) {
+
+			formattedProjectsTitle[i] = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+			formattedProjectsDates[i] = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+			formattedProjectsDescription[i] = HTMLprojectDescription.replace("%data%", projects.projects[i].description)
+												.replace("%data-url%", projects.projects[i].url);
+			formattedProjectsImages[i] = "";
+			
+			formattedProjectsProject[i] = formattedProjectsTitle[i] + formattedProjectsDates[i] + 
+							formattedProjectsDescription[i] + projectImagesList(i);
+			formattedProjects += formattedProjectsProject[i];
+		}
+		return formattedProjects;
+	} else return "****";
+}
+
+	projects.display = function() {
+	$("#projects").append(HTMLprojectStart);
+
+	
+  
+
+
+
 	$(".project-entry").append(formattedProjectsList);
 }
 
 
 //         EDUCATION ***********************
-education.display = function() {
-$("#education").append(HTMLschoolStart); 
 
 var formattedSchoolName =  [],
 	formattedSchoolDegree = [],
@@ -234,10 +241,6 @@ var formattedSchoolsList = function() {
 	} else return "****";
 }
 
-$(".education-entry").append(formattedSchoolsList);
-
-$(".education-entry").append(HTMLonlineClasses);
-
 var formattedOnlineTitle =  [],
 	formattedOnlineSchool = [],
 	formattedOnlineDates = [],
@@ -260,6 +263,13 @@ var formattedCoursesList = function() {
 		return formattedOnlineCourses;
 	} else return "****";
 }
+
+education.display = function() {
+$("#education").append(HTMLschoolStart); 
+
+$(".education-entry").append(formattedSchoolsList);
+
+$(".education-entry").append(HTMLonlineClasses);
 
 $(".education-entry").append(formattedCoursesList);
 }
