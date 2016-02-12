@@ -53,7 +53,7 @@ var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a href="%data%">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -216,7 +216,6 @@ function initializeMap() {
     // Iterates through the array of locations, creates a search object for each location
       locations.forEach(function(place){
       // the search request object
-      console.log("place: "+place)
       var request = {
         query: place
       };

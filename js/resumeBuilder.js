@@ -252,7 +252,7 @@ var formattedCoursesList = function() {
 			formattedOnlineTitle[i] = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
 			formattedOnlineSchool[i] = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
 			formattedOnlineDates[i] = HTMLonlineDates.replace("%data%", education.onlineCourses[i].date);
-			formattedOnlineURL[i] = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+			formattedOnlineURL[i] = HTMLonlineURL.replaceAll("%data%", education.onlineCourses[i].url);
 			formattedOnlineCourse[i] = formattedOnlineTitle[i] + formattedOnlineSchool[i] + formattedOnlineDates[i] + 
 							formattedOnlineURL[i];
 			formattedOnlineCourses += formattedOnlineCourse[i];
@@ -277,7 +277,7 @@ String.prototype.replaceAll = function(search, replacement) {
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 
-var formattedName = HTMLheaderName.replace("%data%", "Kyle");
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formattedName);
 
 //         TOP HEADER ***********************
@@ -320,7 +320,7 @@ $("#mapDiv").append(googleMap);
     // JOYRIDE SCRIPT ************************
     $(window).load(function() {
   $("#resume-tour").joyride({
-        'tipLocation': 'top',
+        'tipLocation': 'bottom',
         'cookieMonster': false,
         'scrollSpeed': 300
       });

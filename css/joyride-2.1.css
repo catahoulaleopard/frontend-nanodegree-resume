@@ -25,9 +25,20 @@ body {
           border-radius: 4px;
 }
 
+
+
 .joyride-content-wrapper {
   padding: 10px 10px 15px 15px;
 }
+
+.joyride-tip-guide span {
+  padding:0;
+}
+
+.joyride-tip-guide span.joyride-nub {
+  color: :#eee !important;
+}
+
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
@@ -53,6 +64,7 @@ body {
   height: 0;
   border: solid 14px;
   border: solid 14px;
+  color: :#eee !important;
 }
 
 .joyride-tip-guide span.joyride-nub.top {
@@ -63,8 +75,8 @@ body {
   border-bottom-color so here we set the border-color
   and override the top,left,right colors below.
   */
-  border-color: #000;
-  border-color: rgba(0,0,0,0.8);
+  color: :#eee !important;
+  border-color:#eee;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -74,15 +86,7 @@ body {
 }
 
 .joyride-tip-guide span.joyride-nub.bottom {
-  /*
-  IE7/IE8 Don't support rgba so we set the fallback
-  border color here. However, IE7/IE8 are also buggy
-  in that the fallback color doesn't work for
-  border-top-color so here we set the border-color
-  and override the bottom,left,right colors below.
-  */
-  border-color: #000;
-  border-color: rgba(0,0,0,0.8) !important;
+  color: :#eee !important;
   border-bottom-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -92,8 +96,7 @@ body {
 }
 
 .joyride-tip-guide span.joyride-nub.right {
-  border-color: #000;
-  border-color: rgba(0,0,0,0.8) !important;
+  color: :#eee !important;
   border-top-color: transparent !important;
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -105,8 +108,7 @@ body {
 }
 
 .joyride-tip-guide span.joyride-nub.left {
-  border-color: #000;
-  border-color: rgba(0,0,0,0.8) !important;
+  color: :#eee !important;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -118,8 +120,8 @@ body {
 }
 
 .joyride-tip-guide span.joyride-nub.top-right {
-  border-color: #000;
-  border-color: rgba(0,0,0,0.8);
+  color: :#eee !important;
+  border-color:#eee;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -128,6 +130,22 @@ body {
   bottom: none;
   left: auto;
   right: 28px;
+}
+
+.joyride-tip-guide {
+    border-radius: 10px !important;
+    background: #eee !important;
+    border: 6px #888 solid;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    color: #f5a623 !important;
+    font-weight: 900 !important;
+}
+
+.joyride-tip-guide.welcome-tip {
+    width:  500px !important;
+    font-size: 26px;
 }
 
 /* Typography */
@@ -214,17 +232,17 @@ body {
 .joyride-close-tip {
   position: absolute;
   right: 10px;
-  top: 10px;
-  color: rgba(255,255,255,0.4) !important;
+  top: 3px;
   text-decoration: none;
   font-family: Verdana, sans-serif;
   font-size: 10px;
   font-weight: bold;
   border-bottom: none !important;
+  color: rgba(0,0,0,0.5) !important;
 }
 
 .joyride-close-tip:hover {
-  color: rgba(255,255,255,0.9) !important;
+  color:#f5a623 !important;
 }
 
 .joyride-modal-bg {
