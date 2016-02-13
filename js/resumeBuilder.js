@@ -21,13 +21,15 @@ var education = {
         "location": "Provo",
         "degree": "BA",
         "majors": [ "English" ],
-        "dates": "1993-1995"
+        "dates": "1993-1995",
+        "url": "https://home.byu.edu/home/"
     }, {
         "name": "Utah State U",
         "location": "Logan",
         "degree": "Associate",
         "majors": [ "Business Info Systems" ],
-        "dates": "2003-2004"
+        "dates": "2003-2004",
+        "url": "https://www.usu.edu/"
     }],
     "onlineCourses": [{
         "title": " Version Control with Git and GitHub",
@@ -231,7 +233,8 @@ var formattedSchoolsList = function() {
     if (education.schools.length > 0) {
         for (var i = 0; i < education.schools.length; i++) {
 
-            formattedSchoolName[i] = HTMLschoolName.replace($data, education.schools[i].name);
+            formattedSchoolName[i] = HTMLschoolName.replace($data, education.schools[i].name)
+            							.replace("#", education.schools[i].url);
             formattedSchoolDegree[i] = HTMLschoolDegree.replace($data, education.schools[i].degree);
             formattedSchoolDates[i] = HTMLschoolDates.replace($data, education.schools[i].dates);
             formattedSchoolLocation[i] = HTMLschoolLocation.replace($data, education.schools[i].location);
@@ -255,7 +258,8 @@ var formattedCoursesList = function() {
     if (education.onlineCourses.length > 0) {
         for (var i = 0; i < education.onlineCourses.length; i++) {
 
-            formattedOnlineTitle[i] = HTMLonlineTitle.replace($data, education.onlineCourses[i].title);
+            formattedOnlineTitle[i] = HTMLonlineTitle.replace($data, education.onlineCourses[i].title)
+            								.replace("#", education.onlineCourses[i].url);;
             formattedOnlineSchool[i] = HTMLonlineSchool.replace($data, education.onlineCourses[i].school);
             formattedOnlineDates[i] = HTMLonlineDates.replace($data, education.onlineCourses[i].date);
             formattedOnlineURL[i] = HTMLonlineURL.replaceAll($data, education.onlineCourses[i].url);
